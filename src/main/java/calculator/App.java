@@ -52,6 +52,7 @@ public class App {
                     System.out.println("분모에 0을 넣을 수 없습니다.");
                 }
                 else  result =  num1 / num2;
+                System.out.println("결과: " + result);
                 break;
 
             default:
