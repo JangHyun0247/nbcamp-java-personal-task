@@ -13,7 +13,7 @@ public class App {
         do {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             num1 = sc.nextInt();
-            if (num1<0){
+            if (num1 < 0) {
                 System.out.print("양의 정수를 입력해주세요!  ");
             }
         } while (num1 < 0);
@@ -22,13 +22,40 @@ public class App {
         do {
             System.out.print("두 번째 숫자를 입력하세요: ");
             num2 = sc.nextInt();
-            if (num2<0){
+            if (num2 < 0) {
                 System.out.print("양의 정수를 입력해주세요!  ");
             }
         } while (num2 < 0);
 
-        System.out.println("사칙연산 기호를 입력하세요 : "); // +, - , *, /
-        char operator = sc.next().charAt(0);
+        System.out.print("사칙연산 기호를 입력하세요 : "); // +, - , *, /
+        char op = sc.next().charAt(0);
 
+        int result = 0;
+        switch (op) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("결과: " + result);
+                break;
+
+            case '-':
+                result = num1 - num2;
+                System.out.println("결과: " + result);
+                break;
+
+            case '*':
+                result = num1 * num2;
+                System.out.println("결과: " + result);
+                break;
+
+            case '/':
+                if (num2 == 0) {
+                    System.out.println("분모에 0을 넣을 수 없습니다.");
+                }
+                else  result =  num1 / num2;
+                break;
+
+            default:
+                System.out.println("Error result");
+        }
     }
 }
