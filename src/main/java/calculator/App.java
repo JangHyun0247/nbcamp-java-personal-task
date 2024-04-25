@@ -1,4 +1,5 @@
 package calculator;
+
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -64,14 +65,26 @@ public class App {
                 default:
                     System.out.println("Error result");
             }
-                //count 가 처음에 0이고 0번째에 result 넣고 이후 count 하나씩 증가시키면서 result 에 대입
+
+            // 배열 크기를 초과한 경우
+            if (count >= intArray.length) {
+                // 0번째에 값을 없애면서 뒤에 있는 값들 앞쪽으로 밀기
+                for (int i = 0; i < intArray.length - 1; i++) {
+                    intArray[i] = intArray[i + 1];
+                }
+                // 다 밀면 9번째 index 에 result 추가
+                intArray[intArray.length - 1] = result;
+            } else {
+                // 배열 크기를 초과하지 않은 경우
                 intArray[count] = result;
                 count++;
+            }
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창
             System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //
             more = sc.next();
-        //exit 글씨와 more 입력 받은 값이 같지 않을 때까지 반복!
+
+            //exit 글씨와 more 입력 받은 값이 같지 않을 때까지 반복!
         } while (!more.equals("exit"));
     }
 }
