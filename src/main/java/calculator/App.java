@@ -1,6 +1,6 @@
 package calculator;
 
-import java.util.Queue;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -9,10 +9,13 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         String more;
-        int[] intArray = new int[10]; //연산 결과 result 를 intArray 에 저장하고 count 수 올리기
+        ArrayList<Integer> intlist = new ArrayList<Integer>();
         int count = 0;
         int num1;
         int result = 0;
+        String remove = "";
+        String inquiry = "";
+
         //계산 한번 끝나도 exit 치기 전까지 숫자, 사칙연산 계산 하는 반복문
         do {
             //음수를 입력하면 양수로 입력하라는 창이 나오고 다시 입력하라는 창
@@ -66,19 +69,21 @@ public class App {
                     System.out.println("Error result");
             }
 
-            // 배열 크기를 초과한 경우
-            if (count >= intArray.length) {
-                // 0번째에 값을 없애면서 뒤에 있는 값들 앞쪽으로 밀기
-                for (int i = 0; i < intArray.length - 1; i++) {
-                    intArray[i] = intArray[i + 1];
-                }
-                // 다 밀면 9번째 index 에 result 추가
-                intArray[intArray.length - 1] = result;
-            } else {
-                // 배열 크기를 초과하지 않은 경우
-                intArray[count] = result;
-                count++;
+            intlist.add(result);
+            count++;
+
+            if (remove.equals("remove")){
+                intlist.remove(count);
             }
+            System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
+            remove = sc.next();
+
+
+            if (inquiry.equals("inquiry")){
+                System.out.println(intlist.toString());
+            }
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
+            inquiry = sc.next();
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창
             System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //
