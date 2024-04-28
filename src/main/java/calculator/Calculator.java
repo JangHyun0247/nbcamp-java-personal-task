@@ -5,7 +5,7 @@ public class Calculator {
 
     ArrayList<Double> resultList = new ArrayList<>();
 
-    public double calculate(String op, int num1, int num2) {
+    public double calculate(String op, int num1, int num2) throws CalculatorException {
         double result = 0;
 
         if (op.equals("/") && num2 == 0) {
