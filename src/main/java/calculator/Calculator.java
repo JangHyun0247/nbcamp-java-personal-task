@@ -4,11 +4,11 @@ import java.util.ArrayList;
 public class Calculator {
 
    private ArrayList<Double> resultList;
-   private ArrayList<Double> cirleList;
+   private ArrayList<Double> circleList;
 
-   public Calculator(ArrayList<Double> resultList, ArrayList<Double> cirleList) {
+   public Calculator(ArrayList<Double> resultList, ArrayList<Double> circleList) {
        this.resultList = resultList;
-       this.cirleList = cirleList;
+       this.circleList = circleList;
    }
 
     // getter 메서드 추가
@@ -16,8 +16,8 @@ public class Calculator {
         return new ArrayList<>(resultList); // 새로운 ArrayList 를 반환하여 원본 데이터 보호
     }
 
-    public ArrayList<Double> getCirleList() {
-       return new ArrayList<>(cirleList);
+    public ArrayList<Double> getCircleList() {
+       return new ArrayList<>(circleList);
     }
 
     // setter 메서드 추가
@@ -25,8 +25,8 @@ public class Calculator {
        this.resultList = resultList;
     }
 
-    public void setCirleList(ArrayList<Double> cirleList) {
-       this.cirleList = cirleList;
+    public void setCircleList(ArrayList<Double> circleList) {
+       this.circleList = circleList;
     }
 
     public double calculate(int num1, int num2, String op) throws CalculatorException {
@@ -69,12 +69,12 @@ public class Calculator {
     public double circleArea(double radius) {
        double circleResult = 0;
        double area = Math.PI * radius * radius;
-       cirleList.add(circleResult);
+       circleList.add(circleResult);
        return circleResult;
     }
 
     public void inquiryCircleResult() {
-        System.out.println(cirleList.toString());
+        System.out.println(circleList.toString());
     }
 
 }

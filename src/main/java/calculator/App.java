@@ -10,8 +10,8 @@ public class App {
         int num1;
         int num2;
         double radius;
-        String more1;
-        String more2;
+        String more1 ="";
+        String more2 ="";
 
         Calculator calculator = new Calculator(new ArrayList<>(), new ArrayList<>());
 
