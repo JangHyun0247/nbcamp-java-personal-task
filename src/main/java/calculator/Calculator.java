@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    ArrayList<Double> resultList = new ArrayList<>();
+   private ArrayList<Double> resultList = new ArrayList<>();
 
     // getter 메서드 추가
     public ArrayList<Double> getResultList() {
@@ -39,4 +39,5 @@ public class Calculator {
         resultList.add(result);
         return result;
     }
+
 }
