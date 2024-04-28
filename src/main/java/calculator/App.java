@@ -38,23 +38,19 @@ public class App {
             char op = sc.next().charAt(0);
             //----------------------------------------------------------------
 
-            System.out.println(calculator.calculate(num1,num2, String.valueOf(op)));
+            System.out.println(calculator.calculate(num1, num2, String.valueOf(op)));
 
             System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
             String remove = sc.next();
-            if (remove.equals("remove")){
-                ArrayList<Double> resultList = calculator.getResultList();
-                if (!resultList.isEmpty()) {
-                    resultList.remove(0); // 첫 번째 인덱스 값 삭제
-                    calculator.setResultList(resultList); // 변경된 resultList 를 다시 설정
-                } else {
-                    System.out.println("삭제할 결과가 없습니다.");
-                }
+            if (remove.equals("remove")) {
+                calculator.removeFirstResult();
+            } else if(calculator.getResultList().isEmpty()) {
+                System.out.println("삭제할 결과가 없습니다.");
             }
 
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
             String inquiry = sc.next();
-            if (inquiry.equals("inquiry")){
+            if (inquiry.equals("inquiry")) {
                 System.out.println(calculator.getResultList().toString());
             }
 

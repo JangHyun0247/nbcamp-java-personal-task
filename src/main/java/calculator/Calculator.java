@@ -40,4 +40,12 @@ public class Calculator {
         return result;
     }
 
+    public void removeFirstResult(){
+        if (!resultList.isEmpty()) {
+            resultList.remove(0);
+        } else {
+            System.out.println("삭제할 결과가 없습니다.");
+        }
+    }
+
 }
