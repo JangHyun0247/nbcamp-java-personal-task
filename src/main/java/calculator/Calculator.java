@@ -1,15 +1,16 @@
 package calculator;
-
 import java.util.ArrayList;
 
 public class Calculator {
 
-    private int Double;
-    ArrayList<Double> resultList = new ArrayList<>(Double);
+    ArrayList<Double> resultList = new ArrayList<>();
 
     public double calculate(String op, int num1, int num2) {
         double result = 0;
-        resultList.add(result);
+
+        if (op.equals("/") && num2 == 0) {
+            throw new CalculatorException("나눗셈의 분모는 0이 될 수 없습니다.");
+        }
 
         if(op.equals("+")) {
             result = num1 + num2;
@@ -23,6 +24,8 @@ public class Calculator {
         else if(op.equals("/")) {
             result =  num1 / num2;
         }
+
+        resultList.add(result);
         return result;
     }
 
