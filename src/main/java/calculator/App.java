@@ -37,8 +37,9 @@ public class App {
             System.out.print("사칙연산 기호를 입력하세요 : "); // +, - , *, /
             char op = sc.next().charAt(0);
             //----------------------------------------------------------------
+
             System.out.println(calculator.calculate(num1,num2, String.valueOf(op)));
-            //----------------------------------------------------------------
+
             System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
             String remove = sc.next();
             if (remove.equals("remove")){
@@ -50,11 +51,11 @@ public class App {
                     System.out.println("삭제할 결과가 없습니다.");
                 }
             }
-            //----------------------------------------------------------------
+
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
             String inquiry = sc.next();
             if (inquiry.equals("inquiry")){
-                System.out.println(calculator.getResultList().toString());
+                System.out.println(calculator.resultList.toString());
             }
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창

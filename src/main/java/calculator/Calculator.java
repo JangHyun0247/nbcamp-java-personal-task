@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class Calculator {
 
+    ArrayList<Double> resultList = new ArrayList<>();
 
-    private ArrayList<Double> resultList = new ArrayList<>();
-
+    // getter 메서드 추가
     public ArrayList<Double> getResultList() {
         return new ArrayList<>(resultList); // 새로운 ArrayList 를 반환하여 원본 데이터 보호
     }
@@ -26,21 +26,17 @@ public class Calculator {
             throw new CalculatorException("Error result ");
         }
 
-        if(op.equals("+")) {
+        if (op.equals("+")) {
             result = num1 + num2;
-        }
-        else if(op.equals("-")) {
+        } else if (op.equals("-")) {
             result = num1 - num2;
-        }
-        else if(op.equals("*")) {
+        } else if (op.equals("*")) {
             result = num1 * num2;
-        }
-        else if(op.equals("/")) {
-            result =  num1 / num2;
+        } else if (op.equals("/")) {
+            result = num1 / num2;
         }
 
         resultList.add(result);
         return result;
     }
-
 }
