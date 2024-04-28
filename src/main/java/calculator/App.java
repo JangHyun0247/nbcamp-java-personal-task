@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws CalculatorException {
         String more;
         int num1;
         int num2;
+
+        Calculator calculator = new Calculator();
+
+        Scanner sc = new Scanner(System.in);
+
 
         //계산 한번 끝나도 exit 치기 전까지 숫자, 사칙연산 계산 하는 반복문
         do {
@@ -34,6 +37,7 @@ public class App {
             char op = sc.next().charAt(0);
             //----------------------------------------------------------------
 
+            System.out.println(calculator.calculate(10, 20, "+"));
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창
             System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //
