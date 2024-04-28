@@ -48,4 +48,8 @@ public class Calculator {
         }
     }
 
+    public void inquiryResult() {
+        System.out.println(resultList.toString());
+    }
+
 }

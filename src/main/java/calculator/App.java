@@ -51,7 +51,7 @@ public class App {
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
             String inquiry = sc.next();
             if (inquiry.equals("inquiry")) {
-                System.out.println(calculator.getResultList().toString());
+                calculator.inquiryResult();
             }
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창
