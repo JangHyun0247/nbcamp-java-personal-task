@@ -3,7 +3,11 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-   private ArrayList<Double> resultList = new ArrayList<>();
+   private ArrayList<Double> resultList;
+
+   public Calculator(ArrayList<Double> resultList) {
+       this.resultList = resultList;
+   }
 
     // getter 메서드 추가
     public ArrayList<Double> getResultList() {

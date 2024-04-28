@@ -10,7 +10,7 @@ public class App {
         int num1;
         int num2;
 
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ArrayList<>());
 
         Scanner sc = new Scanner(System.in);
 
