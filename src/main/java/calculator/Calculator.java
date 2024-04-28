@@ -3,7 +3,17 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    ArrayList<Double> resultList = new ArrayList<>();
+
+    private ArrayList<Double> resultList = new ArrayList<>();
+
+    public ArrayList<Double> getResultList() {
+        return new ArrayList<>(resultList); // 새로운 ArrayList 를 반환하여 원본 데이터 보호
+    }
+
+    // setter 메서드 추가
+    public void setResultList(ArrayList<Double> resultList) {
+        this.resultList = resultList;
+    }
 
     public double calculate(int num1, int num2, String op) throws CalculatorException {
         double result = 0;
