@@ -37,7 +37,19 @@ public class App {
             char op = sc.next().charAt(0);
             //----------------------------------------------------------------
 
-            System.out.println(calculator.calculate(10, 20, "+"));
+            System.out.println(calculator.calculate(num1,num2, String.valueOf(op)));
+
+            System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
+            String remove = sc.next();
+            if (remove.equals("remove")){
+                calculator.resultList.remove(0);
+            }
+
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
+            String inquiry = sc.next();
+            if (inquiry.equals("inquiry")){
+                System.out.println(calculator.resultList.toString());
+            }
 
             //케이스 별로 계산 끝난 후 exit 받는 입력 창
             System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //

@@ -12,6 +12,10 @@ public class Calculator {
             throw new CalculatorException("나눗셈의 분모는 0이 될 수 없습니다.");
         }
 
+        if (!op.equals("+") && !op.equals("-") && !op.equals("*") && !op.equals("/")) {
+            throw new CalculatorException("Error result ");
+        }
+
         if(op.equals("+")) {
             result = num1 + num2;
         }
