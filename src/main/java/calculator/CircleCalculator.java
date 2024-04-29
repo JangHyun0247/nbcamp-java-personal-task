@@ -2,7 +2,9 @@ package calculator;
 
 import java.util.ArrayList;
 
+//Calculator 로부터 상속 받는 CircleCalculator
 public class CircleCalculator extends Calculator {
+
     public CircleCalculator(ArrayList<Double> arithmeticList, ArrayList<Double> circleList) {
         super(arithmeticList, circleList); //super -> 부모 바라보기
     }
