@@ -9,11 +9,6 @@ public class ArithmeticCalculator extends Calculator {
         super(arithmeticList, circleList);
     }
 
-    AddOperator addOperator = new AddOperator();
-    DivideOperator divideOperator = new DivideOperator();
-    MultiplyOperator multiplyOperator = new MultiplyOperator();
-    SubtractOperator subtractOperator = new SubtractOperator();
-
     public double arithmeticResult(int num1, int num2, String op) throws CalculatorException {
         double arithmeticResult = 0;
         if (op.equals("/") && num2 == 0) {
@@ -25,7 +20,7 @@ public class ArithmeticCalculator extends Calculator {
         }
 
         if (op.equals("+")) {
-            arithmeticResult = addOperator.operate (num1, num2);
+            arithmeticResult = new AddOperator().operate(num1, num2);
         } else if (op.equals("-")) {
             arithmeticResult = new SubtractOperator().operate(num1, num2);
         } else if (op.equals("*")) {
