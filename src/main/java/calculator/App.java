@@ -18,7 +18,6 @@ public class App {
         CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>(), new ArrayList<>());
         ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new ArrayList<>());
 
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("operate(사칙연산), circle(원의 넓이) : ");

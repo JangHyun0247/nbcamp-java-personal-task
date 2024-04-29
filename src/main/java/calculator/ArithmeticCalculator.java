@@ -9,6 +9,11 @@ public class ArithmeticCalculator extends Calculator {
         super(arithmeticList, circleList);
     }
 
+    AddOperator addOperator = new AddOperator();
+    DivideOperator divideOperator = new DivideOperator();
+    MultiplyOperator multiplyOperator = new MultiplyOperator();
+    SubtractOperator subtractOperator = new SubtractOperator();
+
     public double arithmeticResult(int num1, int num2, String op) throws CalculatorException {
         double arithmeticResult = 0;
         if (op.equals("/") && num2 == 0) {
@@ -20,13 +25,13 @@ public class ArithmeticCalculator extends Calculator {
         }
 
         if (op.equals("+")) {
-            arithmeticResult = num1 + num2;
+            arithmeticResult = addOperator.operate (num1, num2);
         } else if (op.equals("-")) {
-            arithmeticResult = num1 - num2;
+            arithmeticResult = subtractOperator.operate(num1,num2);
         } else if (op.equals("*")) {
-            arithmeticResult = num1 * num2;
+            arithmeticResult = multiplyOperator.operate(num1,num2);
         } else if (op.equals("/")) {
-            arithmeticResult = num1 / num2;
+            arithmeticResult = divideOperator.operate(num1,num2);
         }
 
         ArrayList<Double> arithmeticList = getArithmeticList(); //arithmeticList 는 부모에 있는걸 가져오기 위해 get 메서드를 써서 내가 만든거임
