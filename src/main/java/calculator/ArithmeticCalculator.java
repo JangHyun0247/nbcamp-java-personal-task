@@ -20,18 +20,20 @@ public class ArithmeticCalculator extends Calculator {
             throw new CalculatorException("나눗셈의 분모는 0이 될 수 없습니다.");
         }
 
-        if (!op.equals("+") && !op.equals("-") && !op.equals("*") && !op.equals("/")) {
+        if (!op.equals("+") && !op.equals("-") && !op.equals("*") && !op.equals("/") && !op.equals("%")) {
             throw new CalculatorException("Error operation ");
         }
 
         if (op.equals("+")) {
             arithmeticResult = addOperator.operate (num1, num2);
         } else if (op.equals("-")) {
-            arithmeticResult = subtractOperator.operate(num1,num2);
+            arithmeticResult = new SubtractOperator().operate(num1, num2);
         } else if (op.equals("*")) {
-            arithmeticResult = multiplyOperator.operate(num1,num2);
+            arithmeticResult = new MultiplyOperator().operate(num1, num2);
         } else if (op.equals("/")) {
-            arithmeticResult = divideOperator.operate(num1,num2);
+            arithmeticResult = new DivideOperator().operate(num1, num2);
+        } else if (op.equals("%")) {
+            arithmeticResult = new ModOperator().operate(num1, num2);
         }
 
         ArrayList<Double> arithmeticList = getArithmeticList(); //arithmeticList 는 부모에 있는걸 가져오기 위해 get 메서드를 써서 내가 만든거임
@@ -40,7 +42,8 @@ public class ArithmeticCalculator extends Calculator {
 
 
     }
-    public void removeFirstResult(){
+
+    public void removeFirstResult() {
         ArrayList<Double> arithmeticList = getArithmeticList();
         if (!arithmeticList.isEmpty()) {
             arithmeticList.remove(0);
