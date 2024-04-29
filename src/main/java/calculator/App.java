@@ -16,11 +16,11 @@ public class App {
 
         //CircleCalculator 클래스에 있는 circleCalculator 생성자 인스턴스, 매개변수 arithmeticList 와 circleList 필드 타입 가져와 초기화와 그릇 만들기
         //만든 이유 : CircleCalculator 에 있는 메서드를 사용하기 위해서 (원의 넓이 구하는 circleArea 를 사용)
-        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>(), new ArrayList<>());
+        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
 
         //ArithmeticCalculator 클래스에 있는 circleCalculator 생성자 인스턴스, 매개변수 arithmeticList 와 circleList 필드 타입 가져와 초기화와 그릇 만들기
         //만든 이유 : ArithmeticCalculator 에 있는 메서드를 사용하기 위해서 (원의 넓이 구하는 circleArea 를 사용)
-        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new ArrayList<>());
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
 
         //변수명이 sc인 시스템에서 입력받는걸 매개변수로 설정한 Scanner 생성
         Scanner sc = new Scanner(System.in);
@@ -67,7 +67,7 @@ public class App {
                     arithmeticCalculator.removeFirstResult();
 
                 //ArithmeticList 에 값이 비어있다면 print 읽어오기
-                } else if (arithmeticCalculator.getArithmeticList().isEmpty()) {
+                } else if (arithmeticCalculator.getResultList().isEmpty()) {
                     System.out.println("삭제할 결과가 없습니다.");
                 }
 

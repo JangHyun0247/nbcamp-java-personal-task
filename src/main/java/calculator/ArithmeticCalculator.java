@@ -7,8 +7,8 @@ public class ArithmeticCalculator extends Calculator {
 
     //ArithmeticCalculator 생성자 arithmeticList, circleList 매개변수로 받아 Calculator 생성자에게 던지기
     //따라서 자식인 ArithmeticCalculator 인스턴스, 초기화 하게 되면 부모인 CircleCalculator 는 따로 안해도 됨
-    public ArithmeticCalculator(ArrayList<Double> arithmeticList, ArrayList<Double> circleList) {
-        super(arithmeticList, circleList);
+    public ArithmeticCalculator(ArrayList<Double> resultList) {
+        super(resultList);
     }
 
     //매개변수로 사칙연산 숫자, 기호 받아 계산하는 메서드, 예외 발생 시 CalculatorException 로 던짐
@@ -41,19 +41,19 @@ public class ArithmeticCalculator extends Calculator {
             arithmeticResult = new ModOperator().operate(num1, num2);
         }
 
-        //Calculator 에서 생성한 get 메서드를 통해 arithmeticList 를 가져오기
-        ArrayList<Double> arithmeticList = getArithmeticList();
-        //arithmeticResult 값 arithmeticList 에 저장
-        arithmeticList.add(arithmeticResult);
+        //Calculator 에서 생성한 get 메서드를 통해 resultList 를 가져오기
+        ArrayList<Double> resultList = getResultList();
+        //arithmeticResult -> resultList 에 저장
+        resultList.add(arithmeticResult);
         return arithmeticResult;
 
 
     }
 
     public void removeFirstResult() {
-        ArrayList<Double> arithmeticList = getArithmeticList();
-        if (!arithmeticList.isEmpty()) {
-            arithmeticList.remove(0);
+        ArrayList<Double> resultList = getResultList();
+        if (!resultList.isEmpty()) {
+            resultList.remove(0);
         } else {
             System.out.println("삭제할 결과가 없습니다.");
         }
