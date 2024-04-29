@@ -17,7 +17,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("operate(사칙연산), circle(원의 넓이)");
+        System.out.print("operate(사칙연산), circle(원의 넓이) : ");
         String select = sc.next();
         if (select.equals("operate")){
             //계산 한번 끝나도 exit 치기 전까지 숫자, 사칙연산 계산 하는 반복문
@@ -49,7 +49,7 @@ public class App {
                 String remove = sc.next();
                 if (remove.equals("remove")) {
                     calculator.removeFirstResult();
-                } else if (calculator.getResultList().isEmpty()) {
+                } else if (calculator.getArithmeticList().isEmpty()) {
                     System.out.println("삭제할 결과가 없습니다.");
                 }
 
@@ -68,7 +68,6 @@ public class App {
 
 
         else if(select.equals("circle")){
-
             do {
                 System.out.print("반지름을 입력하세요 : ");
                 radius = sc.nextDouble();
@@ -82,7 +81,7 @@ public class App {
                 }
                 System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //
                 more2 = sc.next();
-            } while (more2.equals("exit"));
+            } while (!more2.equals("exit"));
         }
     }
 }
