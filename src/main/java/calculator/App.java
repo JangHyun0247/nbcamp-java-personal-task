@@ -15,6 +15,10 @@ public class App {
 
         Calculator calculator = new Calculator(new ArrayList<>(), new ArrayList<>());
 
+        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>(), new ArrayList<>());
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>(), new ArrayList<>());
+
+
         Scanner sc = new Scanner(System.in);
 
         System.out.print("operate(사칙연산), circle(원의 넓이) : ");
@@ -42,21 +46,20 @@ public class App {
                 System.out.print("사칙연산 기호를 입력하세요 : "); // +, - , *, /
                 char op = sc.next().charAt(0);
                 //----------------------------------------------------------------
-
-                System.out.println(calculator.calculate(num1, num2, String.valueOf(op)));
+                System.out.println(arithmeticCalculator.arithmeticResult(num1, num2, String.valueOf(op)));
 
                 System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
                 String remove = sc.next();
                 if (remove.equals("remove")) {
-                    calculator.removeFirstResult();
-                } else if (calculator.getArithmeticList().isEmpty()) {
+                    arithmeticCalculator.removeFirstResult();
+                } else if (arithmeticCalculator.getArithmeticList().isEmpty()) {
                     System.out.println("삭제할 결과가 없습니다.");
                 }
 
                 System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
                 String inquiry1 = sc.next();
                 if (inquiry1.equals("inquiry")) {
-                    calculator.inquiryOpResult();
+                    arithmeticCalculator.inquiryOpResult();
                 }
 
                 //케이스 별로 계산 끝난 후 exit 받는 입력 창
@@ -72,12 +75,12 @@ public class App {
                 System.out.print("반지름을 입력하세요 : ");
                 radius = sc.nextDouble();
 
-                System.out.println(calculator.circleArea(radius));
+                System.out.println(circleCalculator.circleArea(radius));
 
                 System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회) : ");
                 String inquiry2 = sc.next();
                 if (inquiry2.equals("inquiry")) {
-                    calculator.inquiryCircleResult();
+                    circleCalculator.inquiryCircleResult();
                 }
                 System.out.print("더 계산하시겠습니까? (exit) 입력 시 종료 : "); //
                 more2 = sc.next();
