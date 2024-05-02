@@ -16,7 +16,10 @@ public class CircleCalculator extends Calculator {
         circleList.add(circleResult);
         return circleResult;
     }
-    public void inquiryCircleResult() {
-        System.out.println(getResultList().toString());
+    @Override
+    public void inquiryResult() {
+        for ( Double res: super.getResultList() ) {
+            System.out.print("[" + res + "]  ");
+        };
     }
 }
