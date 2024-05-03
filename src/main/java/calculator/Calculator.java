@@ -1,7 +1,6 @@
 package calculator;
 import java.util.ArrayList;
 
-//TODO 추상화 해야함.
 abstract class Calculator {
 
     //static 필드, 인스턴스 필드를 포함하지 않는 메소드인데 원의 넓이를 구할 때 생성자를 통한 초기화가 요구사항 이기에 사용할 수 없다

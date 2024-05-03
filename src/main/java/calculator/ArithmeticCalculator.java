@@ -18,10 +18,10 @@ public class ArithmeticCalculator extends Calculator {
         //arithmeticList 부모에 있는거를 쓴다고 생각하면 안됨, 따로 정의를 해야함
         double arithmeticResult = 0;
 
-        //op 가 / 이고 분모가 0일 때 나눗셈의 분모는 0이 될 수 없습니다 라는 예외 생성 후 던짐
+        /*//op 가 / 이고 분모가 0일 때 나눗셈의 분모는 0이 될 수 없습니다 라는 예외 생성 후 던짐
         if (op.equals("/") && num2 == 0) {
-            throw new CalculatorException("나눗셈의 분모는 0이 될 수 없습니다.");
-        }
+
+        }*/
 
         //올바르지 않은 사칙연산 기호가 아닐 때 Error operation 을 출력하는 예외를 생성해 던짐
         if (!op.equals("+") && !op.equals("-") && !op.equals("*") && !op.equals("/") && !op.equals("%")) {
@@ -36,7 +36,10 @@ public class ArithmeticCalculator extends Calculator {
         } else if (op.equals("*")) {
             arithmeticResult = new MultiplyOperator().operate(num1, num2);
         } else if (op.equals("/")) {
-            arithmeticResult = new DivideOperator().operate(num1, num2);
+            if(num2==0){
+                throw new CalculatorException("나눗셈의 분모는 0이 될 수 없습니다.");
+            }else {
+            arithmeticResult = new DivideOperator().operate(num1, num2);}
         } else if (op.equals("%")) {
             arithmeticResult = new ModOperator().operate(num1, num2);
         }

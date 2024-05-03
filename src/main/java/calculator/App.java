@@ -50,8 +50,13 @@ public class App {
 
                 //arithmeticCalculator -> ArithmeticCalculator 가르키고, arithmeticResult 메서드를 가져옴
                 //op를 박싱한 이유는 .valueOf 를 사용하기 위해서
-                System.out.println("연산 결과는 : " +
-                        arithmeticCalculator.arithmeticResult(num1, num2, String.valueOf(op)));
+                try {
+                    System.out.println("연산 결과는 : " +
+                            arithmeticCalculator.arithmeticResult(num1, num2, String.valueOf(op)));
+                }catch (CalculatorException e) {
+                    System.out.println(e.getMessage());
+                }
+
 
                 // remove 를 입력 받기 위한 창, 순서는 sout 으로 질문 후 scanner 를 통한 대답
                 System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력) : ");
